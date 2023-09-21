@@ -1,26 +1,31 @@
-package main;
+import java.util.List;
 
-public class Airplane {
+public abstract class Airplane {
 
-    private AirplaneTypes type;
-    private int max_weight;
-    private int passenger_count;
-    private int fuel_capacity;
-    private int max_speed;
+    AirplaneType type;
 
-    public Airplane(AirplaneTypes type, int max_weight, int passenger_count, int fuel_capacity, int max_speed) {
+    List<Pilot> pilots;
+    int max_weight;
+    int passenger_count;
+    int fuel_capacity;
+    int max_speed;
+    int fuel_consumption_kilogrames_per_hour;
+
+    public Airplane(AirplaneType type, int max_weight, int passenger_count, int fuel_capacity, int max_speed, int fuel_consumption_kilogrames_per_hour, List<Pilot> pilots) {
         this.type = type;
+        this.pilots = pilots;
         this.max_weight = max_weight;
         this.passenger_count = passenger_count;
         this.fuel_capacity = fuel_capacity;
         this.max_speed = max_speed;
+        this.fuel_consumption_kilogrames_per_hour = fuel_consumption_kilogrames_per_hour;
     }
 
-    public AirplaneTypes getType() {
+    public AirplaneType getType() {
         return type;
     }
 
-    public void setType(AirplaneTypes type) {
+    public void setType(AirplaneType type) {
         this.type = type;
     }
 
@@ -59,4 +64,13 @@ public class Airplane {
     public int getPrice() {
         return 100;
     }
+
+
+    public int getFuel_consumption_kilogrames_per_hour() {
+        // The fuel usage is given in liters per 100 km
+        return fuel_consumption_kilogrames_per_hour;
+    }
+
+
 }
+

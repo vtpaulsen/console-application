@@ -1,9 +1,9 @@
 public class Pilot {
 
-    private String type;
+    private PilotType type;
     private int salary;
 
-    public Pilot(String type, int salary) {
+    public Pilot(PilotType type, int salary) {
         this.type = type;
         this.salary = salary;
     }
@@ -12,7 +12,8 @@ public class Pilot {
         return salary;
     }
 
-    public String getType() {
+    public PilotType() {
         return type;
     }
+
 }

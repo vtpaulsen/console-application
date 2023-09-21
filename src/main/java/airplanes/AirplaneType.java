@@ -1,4 +1,4 @@
-public enum AirplaneTypes {
+public enum AirplaneType {
     PRIVATE, PASSENGER, TRANSPORTATION
 
 }
