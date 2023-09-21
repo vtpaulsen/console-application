@@ -39,7 +39,7 @@ public class Simulator {
 
             System.out.println("The available airplanes are: ");
             printAirplaneList();
-            Airplane airplane = selectAirplane("Please select an airplane: ");
+            Airplane airplane = selectAirplane();
             System.out.println("You have chosen to fly with the " + airplane.getAirplaneType() + " airplane.\n");
             chosenAirplane = airplane;
 
@@ -66,7 +66,7 @@ public class Simulator {
         System.out.println("You have selected " + fuel + " kg of fuel.\n");
 
         // Select the number of passengers
-        int passengers = selectPassengerAmount("Please select the number of passengers: ");
+        int passengers = selectPassengerAmount();
         System.out.println("You have selected " + passengers + " passengers.\n");
 
         // Select the amount of cargo in kg
@@ -106,10 +106,10 @@ public class Simulator {
         }
     }
 
-    private int selectPassengerAmount(String prompt) {
+    private int selectPassengerAmount() {
         while (true) {
             try {
-                System.out.print(prompt);
+                System.out.print("Please select the number of passengers: ");
                 int passengers = reader.nextInt();
                 if (passengers >= 0) {
                     if (passengers > chosenAirplane.getMaximumPassengers()) {
@@ -136,14 +136,14 @@ public class Simulator {
                 System.out.println("The chosen airplane has a consumption of " + chosenAirplane.getFuelConsumptionPerKilometer() + " kg per 100 km.");
                 distance = (int) DistanceCalculator.distance(chosenDepartureAirport, chosenArrivalAirport, "K");
                 int fuelNeeded = distance * chosenAirplane.getFuelConsumptionPerKilometer();
-                System.out.println("You need atleast " + fuelNeeded + " kg of fuel.");
+                System.out.println("You need at least " + fuelNeeded + " kg of fuel.");
                 System.out.print("Please select the amount of fuel in kg: ");
                 int fuel = reader.nextInt();
                 if (fuel >= 0 && fuel >= fuelNeeded) {
                     chosenAirplane.setCurrentFuelCapacity(fuel);
                     return fuel;
                 } else {
-                    System.out.println("The airplane needs atleast " + fuelNeeded + " kg of fuel. Please try again.");
+                    System.out.println("The airplane needs at least " + fuelNeeded + " kg of fuel. Please try again.");
                 }
             } catch (InputMismatchException e) {
                 System.out.println("Invalid input. Please enter a number.");
@@ -186,10 +186,10 @@ public class Simulator {
         }
     }
 
-    private Airplane selectAirplane(String prompt) {
+    private Airplane selectAirplane() {
         while (true) {
             try {
-                System.out.print(prompt);
+                System.out.print("Please select an airplane: ");
                 int choice = reader.nextInt();
                 if (choice >= 1 && choice <= airplanes.size()) {
                     return airplanes.get(choice - 1);
