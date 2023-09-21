@@ -1,3 +1,5 @@
+package pilots;
+
 public enum PilotType {
-    PRIVATE, PASSENGER, TRANSPORTATION
+    PILOT, CAPTAIN, STUDENT
 }

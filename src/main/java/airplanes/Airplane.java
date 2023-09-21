@@ -1,76 +1,145 @@
+package airplanes;
+
+import pilots.Pilot;
+
 import java.util.List;
 
 public abstract class Airplane {
 
-    AirplaneType type;
+    public String calculateFlightTime(int distance) {
+        double flightTime = distance / (double) maximumSpeed * 60;
+        int hours = (int) flightTime / 60;
+        int minutes = (int) flightTime % 60;
+        return hours + " hours and " + minutes + " minutes";
+    }
 
+    public int calculateFuelConsumptionInKg(int distance) {
+        int fuelConsumption = distance * fuelConsumptionPerKilometer;
+        return fuelConsumption;
+    }
+
+    public enum AirplaneType {
+        PASSENGER, TRANSPORTATION, PRIVATE
+    }
+
+    // Airplane properties
+    AirplaneType airplaneType;
+    int emptyWeight;
+    int maxTakeoffWeight;
     List<Pilot> pilots;
-    int max_weight;
-    int passenger_count;
-    int fuel_capacity;
-    int max_speed;
-    int fuel_consumption_kilogrames_per_hour;
+    int maximumPassengers;
+    int currentNumberOfPassengers;
+    int maximumFuelCapacity;
+    int currentFuelCapacity;
+    int maximumSpeed;
+    int fuelConsumptionPerKilometer;
 
-    public Airplane(AirplaneType type, int max_weight, int passenger_count, int fuel_capacity, int max_speed, int fuel_consumption_kilogrames_per_hour, List<Pilot> pilots) {
-        this.type = type;
+    public Airplane(AirplaneType airplaneType, int emptyWeight, int maxTakeoffWeight, List<Pilot> pilots, int maximumPassengers, int maximumFuelCapacity, int maximumSpeed, int fuelConsumptionPerKilometer) {
+        this.airplaneType = airplaneType;
+        this.emptyWeight = emptyWeight;
+        this.maxTakeoffWeight = maxTakeoffWeight;
         this.pilots = pilots;
-        this.max_weight = max_weight;
-        this.passenger_count = passenger_count;
-        this.fuel_capacity = fuel_capacity;
-        this.max_speed = max_speed;
-        this.fuel_consumption_kilogrames_per_hour = fuel_consumption_kilogrames_per_hour;
+        this.maximumPassengers = maximumPassengers;
+        this.currentNumberOfPassengers = 0;
+        this.maximumFuelCapacity = maximumFuelCapacity;
+        this.currentFuelCapacity = 0;
+        this.maximumSpeed = maximumSpeed;
+        this.fuelConsumptionPerKilometer = fuelConsumptionPerKilometer;
     }
 
-    public AirplaneType getType() {
-        return type;
+    public void addCargo(int weight) {
+        if (weight + emptyWeight + currentFuelCapacity > maxTakeoffWeight) {
+            System.out.println("The cargo is too heavy for this airplane!");
+        } else {
+            currentFuelCapacity += weight;
+        }
     }
 
-    public void setType(AirplaneType type) {
-        this.type = type;
+    public AirplaneType getAirplaneType() {
+        return airplaneType;
     }
 
-    public int getMax_weight() {
-        return max_weight;
+    public int getEmptyWeight() {
+        return emptyWeight;
     }
 
-    public void setMax_weight(int max_weight) {
-        this.max_weight = max_weight;
+    public void setEmptyWeight(int emptyWeight) {
+        this.emptyWeight = emptyWeight;
     }
 
-    public int getPassenger_count() {
-        return passenger_count;
+    public int getMaxTakeoffWeight() {
+        return maxTakeoffWeight;
     }
 
-    public void setPassenger_count(int passenger_count) {
-        this.passenger_count = passenger_count;
+    public void setMaxTakeoffWeight(int maxTakeoffWeight) {
+        this.maxTakeoffWeight = maxTakeoffWeight;
     }
 
-    public int getFuel_capacity() {
-        return fuel_capacity;
+    public List<Pilot> getPilotList() {
+        return pilots;
     }
 
-    public void setFuel_capacity(int fuel_capacity) {
-        this.fuel_capacity = fuel_capacity;
+    public String getPilotNames() {
+        String pilotNames = "";
+        for (int i = 0; i < pilots.size(); i++) {
+            pilotNames += pilots.get(i).getType();
+            if (i < pilots.size() - 1) {
+                pilotNames += ", ";
+            }
+        }
+        return pilotNames;
     }
 
-    public int getMax_speed() {
-        return max_speed;
+    public void setPilots(List<Pilot> pilots) {
+        this.pilots = pilots;
     }
 
-    public void setMax_speed(int max_speed) {
-        this.max_speed = max_speed;
+    public int getMaximumPassengers() {
+        return maximumPassengers;
     }
 
-    public int getPrice() {
-        return 100;
+    public void setMaximumPassengers(int maximumPassengers) {
+        this.maximumPassengers = maximumPassengers;
     }
 
-
-    public int getFuel_consumption_kilogrames_per_hour() {
-        // The fuel usage is given in liters per 100 km
-        return fuel_consumption_kilogrames_per_hour;
+    public int getCurrentNumberOfPassengers() {
+        return currentNumberOfPassengers;
     }
 
+    public void setCurrentNumberOfPassengers(int currentNumberOfPassengers) {
+        this.currentNumberOfPassengers = currentNumberOfPassengers;
+    }
 
+    public int getMaximumFuelCapacity() {
+        return maximumFuelCapacity;
+    }
+
+    public void setMaximumFuelCapacity(int maximumFuelCapacity) {
+        this.maximumFuelCapacity = maximumFuelCapacity;
+    }
+
+    public int getCurrentFuelCapacity() {
+        return currentFuelCapacity;
+    }
+
+    public void setCurrentFuelCapacity(int currentFuelCapacity) {
+        this.currentFuelCapacity = currentFuelCapacity;
+    }
+
+    public int getMaximumSpeed() {
+        return maximumSpeed;
+    }
+
+    public void setMaximumSpeed(int maximumSpeed) {
+        this.maximumSpeed = maximumSpeed;
+    }
+
+    public int getFuelConsumptionPerKilometer() {
+        return fuelConsumptionPerKilometer;
+    }
+
+    public void setFuelConsumptionPerKilometer(int fuelConsumptionPerKilometer) {
+        this.fuelConsumptionPerKilometer = fuelConsumptionPerKilometer;
+    }
 }
 

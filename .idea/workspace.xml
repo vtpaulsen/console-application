@@ -5,12 +5,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6ec48fce-c727-4947-b6e0-c28be39ea330" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Airport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Airport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DistanceCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DistanceCalculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Simulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Simulator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Welcome.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Welcome.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/airplanes/Airplane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/airplanes/Airplane.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/airplanes/PassengerAirplane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/airplanes/PassengerAirplane.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/airplanes/PrivateAirplane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/airplanes/PrivateAirplane.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/airplanes/TransportationAirplane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/airplanes/TransportationAirplane.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pilots/Pilot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pilots/Pilot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pilots/PilotType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pilots/PilotType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/BasicTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BasicTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/pom.xml" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="2VQjYYGKzHJz9gFODF7o09cO8V7" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -22,10 +47,47 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Simulator">
+    <configuration name="DistanceCalculator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="DistanceCalculator" />
+      <module name="console-application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Simulator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Simulator" />
+      <module name="console-application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Simulator" />
+        <item itemvalue="Application.DistanceCalculator" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -34,7 +96,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1694775246490</updated>
-      <workItem from="1694775247663" duration="2000" />
+      <workItem from="1694775247663" duration="24660000" />
     </task>
     <servers />
   </component>

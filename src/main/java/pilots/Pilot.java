@@ -1,18 +1,20 @@
+package pilots;
+
 public class Pilot {
 
     private PilotType type;
-    private int salary;
+    private int hourly_salary;
 
-    public Pilot(PilotType type, int salary) {
+    public Pilot(PilotType type, int hourly_salary) {
         this.type = type;
-        this.salary = salary;
+        this.hourly_salary = hourly_salary;
     }
 
-    public int getSalary() {
-        return salary;
+    public int getHourly_salary() {
+        return hourly_salary;
     }
 
-    public PilotType() {
+    public PilotType getType() {
         return type;
     }
 
