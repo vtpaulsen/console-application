@@ -1,12 +1,7 @@
 import airplanes.Airplane;
 import airplanes.PrivateAirplane;
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.jupiter.api.BeforeEach;
-
-import java.io.InputStream;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class SimulatorTest {
