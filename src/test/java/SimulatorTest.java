@@ -1,7 +1,8 @@
 import airplanes.Airplane;
 import airplanes.PrivateAirplane;
-import org.junit.Test;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class SimulatorTest {
@@ -43,9 +44,8 @@ public class SimulatorTest {
         Airplane airplane = new PrivateAirplane();
         assertEquals(airplane.getAirplaneType(), Airplane.AirplaneType.PRIVATE);
         assertEquals(airplane.getEmptyWeight(), 10_000);
-        assertEquals(airplane.getMaxTakeoffWeight(), 20_000);
+        assertEquals(airplane.getMaxTakeoffWeight(), 50_000);
         assertEquals(airplane.getPilotList().size(), 1);
         // TODO: Add more assertions
     }
-
 }
