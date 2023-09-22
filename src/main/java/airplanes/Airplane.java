@@ -12,24 +12,24 @@ public abstract class Airplane {
 
     private AirplaneType airplaneType;
     private int emptyWeight;
+
+    private int totalWeight = emptyWeight;
     private int maxTakeoffWeight;
     private List<Pilot> pilots;
     private int maximumPassengers;
     private int currentNumberOfPassengers;
-    private int maximumFuelCapacity;
     private int currentFuelCapacity;
     private int maximumSpeed;
     private int fuelConsumptionPerKilometer;
     private static final int FUEL_PRICE_PER_KG = 15;
 
-    public Airplane(AirplaneType airplaneType, int emptyWeight, int maxTakeoffWeight, List<Pilot> pilots, int maximumPassengers, int maximumFuelCapacity, int maximumSpeed, int fuelConsumptionPerKilometer) {
+    public Airplane(AirplaneType airplaneType, int emptyWeight, int maxTakeoffWeight, List<Pilot> pilots, int maximumPassengers, int maximumSpeed, int fuelConsumptionPerKilometer) {
         // Initialize fields here
         this.airplaneType = airplaneType;
         this.emptyWeight = emptyWeight;
         this.maxTakeoffWeight = maxTakeoffWeight;
         this.pilots = pilots;
         this.maximumPassengers = maximumPassengers;
-        this.maximumFuelCapacity = maximumFuelCapacity;
         this.maximumSpeed = maximumSpeed;
         this.fuelConsumptionPerKilometer = fuelConsumptionPerKilometer;
     }
@@ -46,10 +46,10 @@ public abstract class Airplane {
     }
 
     public void addCargo(int weight) {
-        if (weight + emptyWeight + currentFuelCapacity > maxTakeoffWeight) {
+        if (weight + emptyWeight > maxTakeoffWeight) {
             throw new IllegalArgumentException("The cargo is too heavy for this airplane!");
         } else {
-            currentFuelCapacity += weight;
+            totalWeight += weight;
         }
     }
 
@@ -64,7 +64,6 @@ public abstract class Airplane {
     public int getMaxTakeoffWeight() {
         return maxTakeoffWeight;
     }
-
 
     public List<Pilot> getPilotList() {
         return pilots;
@@ -86,7 +85,9 @@ public abstract class Airplane {
     }
 
     public void setCurrentNumberOfPassengers(int currentNumberOfPassengers) {
-        this.currentNumberOfPassengers = currentNumberOfPassengers;
+        if (currentNumberOfPassengers > maximumPassengers) {
+            throw new IllegalArgumentException("The number of passengers exceeds the maximum capacity of this airplane!");
+        } else this.currentNumberOfPassengers = currentNumberOfPassengers;
     }
 
     public void setCurrentFuelCapacity(int currentFuelCapacity) {
@@ -108,8 +109,6 @@ public abstract class Airplane {
         totalHourlySalary *= hours;
         return fuel + totalHourlySalary;
     }
-
-
 }
 
 

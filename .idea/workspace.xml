@@ -4,8 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6ec48fce-c727-4947-b6e0-c28be39ea330" name="Changes" comment="Refactor: merge methods in Simulator">
+    <list default="true" id="6ec48fce-c727-4947-b6e0-c28be39ea330" name="Changes" comment="Drop: deleted depricated dependecy in pom.xml">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Simulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Simulator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/airplanes/Airplane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/airplanes/Airplane.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/airplanes/PassengerAirplane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/airplanes/PassengerAirplane.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/airplanes/PrivateAirplane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/airplanes/PrivateAirplane.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/airplanes/TransportationAirplane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/airplanes/TransportationAirplane.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pilots/Pilot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pilots/Pilot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pilots/PilotType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/SimulatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/SimulatorTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,6 +80,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SimulatorTest.testAddAirport" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="console-application" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="SimulatorTest" />
+      <option name="METHOD_NAME" value="testAddAirport" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="SimulatorTest.testInitialize" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="console-application" />
       <option name="PACKAGE_NAME" value="" />
@@ -95,6 +114,7 @@
       <list>
         <item itemvalue="Application.Simulator" />
         <item itemvalue="JUnit.SimulatorTest" />
+        <item itemvalue="JUnit.SimulatorTest.testAddAirport" />
         <item itemvalue="JUnit.SimulatorTest.testInitialize" />
         <item itemvalue="JUnit.SimulatorTest.testInvalidAirportSelection" />
       </list>
@@ -139,7 +159,14 @@
       <option name="project" value="LOCAL" />
       <updated>1695377824148</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Drop: deleted depricated dependecy in pom.xml">
+      <created>1695377882586</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1695377882586</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -151,6 +178,7 @@
     <MESSAGE value="Refactor: clean up in Airplane" />
     <MESSAGE value="Refactor: clean up in Simulator" />
     <MESSAGE value="Refactor: merge methods in Simulator" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor: merge methods in Simulator" />
+    <MESSAGE value="Drop: deleted depricated dependecy in pom.xml" />
+    <option name="LAST_COMMIT_MESSAGE" value="Drop: deleted depricated dependecy in pom.xml" />
   </component>
 </project>

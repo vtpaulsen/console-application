@@ -24,10 +24,38 @@ public class Simulator {
         System.out.println("Welcome to the Airplane Simulator!\n");
 
         // Start the game
-        start();
+        chooseAction();
     }
 
-    private void start() {
+    private void chooseAction() {
+        System.out.println("What would you like to do?");
+        System.out.println("1. Fly");
+        System.out.println("2. Add an airport");
+        System.out.println("3. ...");
+        System.out.println("4. End the game");
+        System.out.print("Please select an option: ");
+        int option = reader.nextInt();
+        reader.nextLine();
+        System.out.println();
+
+        switch (option) {
+            case 1:
+                startFlying();
+                break;
+            case 2:
+                addAirport();
+                break;
+            case 4:
+                System.out.println("Thank you for playing the Airplane Simulator!");
+                System.exit(0);
+                break;
+            default:
+                System.out.println("Invalid selection. Please try again.\n");
+                chooseAction();
+        }
+    }
+
+    private void startFlying() {
         printItemList(airports, "airports");
 
         departureAirport = selectItem("Please select a departure airport: ", airports);
@@ -54,7 +82,7 @@ public class Simulator {
             }
         } else {
             System.out.println("Invalid selection. Departure and arrival airports cannot be the same. Please try again.\n");
-            start();
+            startFlying();
         }
 
         // Select the amount of fuel in kg
@@ -74,6 +102,63 @@ public class Simulator {
 
         // End the game
         end();
+    }
+
+    public void addAirport() {
+        String name;
+        double latitude;
+        double longitude;
+
+        // Input validation loop for airport name (String)
+        while (true) {
+            System.out.print("Please enter the name of the airport: ");
+            name = reader.nextLine();
+            if (!name.isEmpty()) {
+                break; // Valid input, exit the loop
+            } else {
+                System.out.println("Invalid input. Please enter a non-empty name.");
+            }
+        }
+
+        // Input validation loop for latitude (double)
+        while (true) {
+            System.out.print("Please enter the latitude of the airport: ");
+            if (reader.hasNextDouble()) {
+                latitude = reader.nextDouble();
+                reader.nextLine(); // Consume the newline character
+                break; // Valid input, exit the loop
+            } else {
+                System.out.println("Invalid input. Please enter a valid latitude (double).");
+                reader.nextLine(); // Clear the invalid input
+            }
+        }
+
+        // Input validation loop for longitude (double)
+        while (true) {
+            System.out.print("Please enter the longitude of the airport: ");
+            if (reader.hasNextDouble()) {
+                longitude = reader.nextDouble();
+                reader.nextLine(); // Consume the newline character
+                break; // Valid input, exit the loop
+            } else {
+                System.out.println("Invalid input. Please enter a valid longitude (double).");
+                reader.nextLine(); // Clear the invalid input
+            }
+        }
+
+        // Make sure that the airport doesn't already exist
+        for (Airport airport : airports) {
+            if (airport.getName().equals(name)) {
+                System.out.println("Airport " + name + " already exists.\n");
+                chooseAction();
+            }
+        }
+
+        Airport airport = new Airport(name, latitude, longitude);
+        airports.add(airport);
+        System.out.println("Airport " + airport.getName() + " added.\n");
+
+        chooseAction();
     }
 
     private void printFlightSummary() {

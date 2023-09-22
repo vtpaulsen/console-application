@@ -2,6 +2,10 @@ package pilots;
 
 public class Pilot {
 
+    public enum PilotType {
+        PILOT, CAPTAIN, STUDENT
+    }
+
     private PilotType type;
     private int hourly_salary;
 

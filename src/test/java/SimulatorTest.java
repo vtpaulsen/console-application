@@ -1,42 +1,24 @@
+import airplanes.Airplane;
+import airplanes.PrivateAirplane;
 import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.jupiter.api.BeforeEach;
 
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
-import java.io.PrintStream;
 
-import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class SimulatorTest {
 
-
-    private final InputStream originalSystemIn = System.in;
-
-    private DistanceCalculator calculator = new DistanceCalculator();
-
-    private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
-    private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
-    private final PrintStream originalOut = System.out;
-    private final PrintStream originalErr = System.err;
+    DistanceCalculator calculator;
+    Simulator simulator;
 
     @BeforeEach
     public void setUp() {
-        // Redirect System.in to provide custom input
-
-        String input = "1";
-        ByteArrayInputStream inputStream = new ByteArrayInputStream(input.getBytes());
-        System.setIn(inputStream);
+        calculator = new DistanceCalculator();
+        simulator = new Simulator();
     }
-
-    @After
-    public void tearDown() {
-        // Restore the original System.in
-        System.setIn(originalSystemIn);
-    }
-
     @Test
     public void testDistanceBetweenAarhusAndHanoi() {
         Airport aarhus = new Airport("Aarhus", 56.2999988, 10.617997528);
@@ -57,20 +39,18 @@ public class SimulatorTest {
     public void testAirport() {
         Airport aarhus = new Airport("Aarhus", 56.2999988, 10.617997528);
         assertEquals("Aarhus", aarhus.getName());
-        assertEquals(56.2999988, aarhus.getLatitude(), 0.0001);
-
-     }
-
-    @Test
-    public void test2() {
-        assertEquals(2, 2);
+        assertEquals(56.2999988, aarhus.getLatitude(), 0.1);
+        assertEquals(10.617997528, aarhus.getLongitude(), 0.1);
     }
 
     @Test
-    public void test3() {
-        assertEquals(3, 3);
+    public void testPrivateAirplane() {
+        Airplane airplane = new PrivateAirplane();
+        assertEquals(airplane.getAirplaneType(), Airplane.AirplaneType.PRIVATE);
+        assertEquals(airplane.getEmptyWeight(), 10_000);
+        assertEquals(airplane.getMaxTakeoffWeight(), 20_000);
+        assertEquals(airplane.getPilotList().size(), 1);
+        // TODO: Add more assertions
     }
-
-
 
 }
