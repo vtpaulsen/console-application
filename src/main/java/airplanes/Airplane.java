@@ -6,6 +6,34 @@ import java.util.List;
 
 public abstract class Airplane {
 
+    public enum AirplaneType {
+        PASSENGER, TRANSPORTATION, PRIVATE
+    }
+
+    private AirplaneType airplaneType;
+    private int emptyWeight;
+    private int maxTakeoffWeight;
+    private List<Pilot> pilots;
+    private int maximumPassengers;
+    private int currentNumberOfPassengers;
+    private int maximumFuelCapacity;
+    private int currentFuelCapacity;
+    private int maximumSpeed;
+    private int fuelConsumptionPerKilometer;
+    private static final int FUEL_PRICE_PER_KG = 15;
+
+    public Airplane(AirplaneType airplaneType, int emptyWeight, int maxTakeoffWeight, List<Pilot> pilots, int maximumPassengers, int maximumFuelCapacity, int maximumSpeed, int fuelConsumptionPerKilometer) {
+        // Initialize fields here
+        this.airplaneType = airplaneType;
+        this.emptyWeight = emptyWeight;
+        this.maxTakeoffWeight = maxTakeoffWeight;
+        this.pilots = pilots;
+        this.maximumPassengers = maximumPassengers;
+        this.maximumFuelCapacity = maximumFuelCapacity;
+        this.maximumSpeed = maximumSpeed;
+        this.fuelConsumptionPerKilometer = fuelConsumptionPerKilometer;
+    }
+
     public String calculateFlightTime(int distance) {
         double flightTime = distance / (double) maximumSpeed * 60;
         int hours = (int) flightTime / 60;
@@ -13,42 +41,13 @@ public abstract class Airplane {
         return hours + " hours and " + minutes + " minutes";
     }
 
-    public int calculateFuelConsumptionInKg(int distance) {
+    public int calculateFuelConsumption(int distance) {
         return distance * fuelConsumptionPerKilometer;
-    }
-
-    public enum AirplaneType {
-        PASSENGER, TRANSPORTATION, PRIVATE
-    }
-
-    // Airplane properties
-    AirplaneType airplaneType;
-    int emptyWeight;
-    int maxTakeoffWeight;
-    List<Pilot> pilots;
-    int maximumPassengers;
-    int currentNumberOfPassengers;
-    int maximumFuelCapacity;
-    int currentFuelCapacity;
-    int maximumSpeed;
-    int fuelConsumptionPerKilometer;
-
-    public Airplane(AirplaneType airplaneType, int emptyWeight, int maxTakeoffWeight, List<Pilot> pilots, int maximumPassengers, int maximumFuelCapacity, int maximumSpeed, int fuelConsumptionPerKilometer) {
-        this.airplaneType = airplaneType;
-        this.emptyWeight = emptyWeight;
-        this.maxTakeoffWeight = maxTakeoffWeight;
-        this.pilots = pilots;
-        this.maximumPassengers = maximumPassengers;
-        this.currentNumberOfPassengers = 0;
-        this.maximumFuelCapacity = maximumFuelCapacity;
-        this.currentFuelCapacity = 0;
-        this.maximumSpeed = maximumSpeed;
-        this.fuelConsumptionPerKilometer = fuelConsumptionPerKilometer;
     }
 
     public void addCargo(int weight) {
         if (weight + emptyWeight + currentFuelCapacity > maxTakeoffWeight) {
-            System.out.println("The cargo is too heavy for this airplane!");
+            throw new IllegalArgumentException("The cargo is too heavy for this airplane!");
         } else {
             currentFuelCapacity += weight;
         }
@@ -62,96 +61,64 @@ public abstract class Airplane {
         return emptyWeight;
     }
 
-    public void setEmptyWeight(int emptyWeight) {
-        this.emptyWeight = emptyWeight;
-    }
-
     public int getMaxTakeoffWeight() {
         return maxTakeoffWeight;
     }
 
-    public void setMaxTakeoffWeight(int maxTakeoffWeight) {
-        this.maxTakeoffWeight = maxTakeoffWeight;
-    }
 
     public List<Pilot> getPilotList() {
         return pilots;
     }
 
     public String getPilotNames() {
-        String pilotNames = "";
+        StringBuilder pilotNames = new StringBuilder();
         for (int i = 0; i < pilots.size(); i++) {
-            pilotNames += pilots.get(i).getType();
+            pilotNames.append(pilots.get(i).getType());
             if (i < pilots.size() - 1) {
-                pilotNames += ", ";
+                pilotNames.append(", ");
             }
         }
-        return pilotNames;
-    }
-
-    public void setPilots(List<Pilot> pilots) {
-        this.pilots = pilots;
+        return pilotNames.toString();
     }
 
     public int getMaximumPassengers() {
         return maximumPassengers;
     }
 
-    public void setMaximumPassengers(int maximumPassengers) {
-        this.maximumPassengers = maximumPassengers;
-    }
-
-    public int getCurrentNumberOfPassengers() {
-        return currentNumberOfPassengers;
-    }
-
     public void setCurrentNumberOfPassengers(int currentNumberOfPassengers) {
         this.currentNumberOfPassengers = currentNumberOfPassengers;
-    }
-
-    public int getMaximumFuelCapacity() {
-        return maximumFuelCapacity;
-    }
-
-    public void setMaximumFuelCapacity(int maximumFuelCapacity) {
-        this.maximumFuelCapacity = maximumFuelCapacity;
-    }
-
-    public int getCurrentFuelCapacity() {
-        return currentFuelCapacity;
     }
 
     public void setCurrentFuelCapacity(int currentFuelCapacity) {
         this.currentFuelCapacity = currentFuelCapacity;
     }
 
-    public int getMaximumSpeed() {
-        return maximumSpeed;
-    }
-
-    public void setMaximumSpeed(int maximumSpeed) {
-        this.maximumSpeed = maximumSpeed;
-    }
-
     public int getFuelConsumptionPerKilometer() {
         return fuelConsumptionPerKilometer;
     }
 
-    public void setFuelConsumptionPerKilometer(int fuelConsumptionPerKilometer) {
-        this.fuelConsumptionPerKilometer = fuelConsumptionPerKilometer;
-    }
-
     public int getTotalCost(int distance) {
-        int fuel = calculateFuelConsumptionInKg(distance) * 20; // 15 is the current price for a kg of fuel
+        int fuel = calculateFuelConsumption(distance) * FUEL_PRICE_PER_KG;
         int totalHourlySalary = 0;
         for (Pilot p : pilots) {
-            totalHourlySalary =+ p.getHourly_salary();
+            totalHourlySalary += p.getHourly_salary();
         }
         double flightTime = distance / (double) maximumSpeed * 60;
         int hours = (int) flightTime / 60;
         totalHourlySalary *= hours;
-        int totalCost = fuel + totalHourlySalary;
-        return totalCost;
+        return fuel + totalHourlySalary;
     }
+
+
 }
+
+
+
+
+
+
+
+
+
+
 

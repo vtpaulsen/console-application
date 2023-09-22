@@ -81,7 +81,7 @@ public class Simulator {
         System.out.println(" You are flying from " + chosenDepartureAirport.getName() + " to " + chosenArrivalAirport.getName() + " with the " + chosenAirplane.getAirplaneType() + " airplane.");
         System.out.println(" The distance between the airports is " + distance + " km, with an estimated flight time of " + chosenAirplane.calculateFlightTime(distance));
         System.out.println(" The pilot(s) for this flight is/are: " + chosenAirplane.getPilotNames());
-        System.out.println(" The fuel consumption for this flight is estimated to be " + chosenAirplane.calculateFuelConsumptionInKg(distance) + " kg.");
+        System.out.println(" The fuel consumption for this flight is estimated to be " + chosenAirplane.calculateFuelConsumption(distance) + " kg.");
         System.out.println(" The total cost for this fligt is : " + chosenAirplane.getTotalCost(distance) + " DKK");
 
         // End the game
