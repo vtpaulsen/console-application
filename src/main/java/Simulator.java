@@ -18,7 +18,7 @@ public class Simulator {
         simulator.initialize();
     }
 
-    public void initialize() {
+    private void initialize() {
         setUp();
 
         System.out.println("\n************************ Airplane Simulator ************************");
@@ -28,16 +28,15 @@ public class Simulator {
         start();
     }
 
-    public void start() {
+    private void start() {
         System.out.println("The available airports are: ");
         printAirportList();
         chosenDepartureAirport = selectAirport("Please select a departure airport: ");
         chosenArrivalAirport = selectAirport("Please select an arrival airport: ");
 
         if (!chosenDepartureAirport.equals(chosenArrivalAirport)) {
-            System.out.println("You have chosen to fly from " + chosenDepartureAirport + " to " + chosenArrivalAirport + ".\n");
+            System.out.println("You have chosen to fly from " + chosenDepartureAirport.getName() + " to " + chosenArrivalAirport.getName() + ".\n");
 
-            System.out.println("The available airplanes are: ");
             printAirplaneList();
             Airplane airplane = selectAirplane();
             System.out.println("You have chosen to fly with the " + airplane.getAirplaneType() + " airplane.\n");
@@ -73,19 +72,20 @@ public class Simulator {
         int cargo = selectCargoAmount();
         System.out.println("You have selected " + cargo + " kg of cargo.\n");
 
-        // The total cost
-
-
         // Summary of the flight
+        printFlightSummary();
+
+        // End the game
+        end();
+    }
+
+    private void printFlightSummary() {
         System.out.println("Summary of the flight:");
         System.out.println(" You are flying from " + chosenDepartureAirport.getName() + " to " + chosenArrivalAirport.getName() + " with the " + chosenAirplane.getAirplaneType() + " airplane.");
         System.out.println(" The distance between the airports is " + distance + " km, with an estimated flight time of " + chosenAirplane.calculateFlightTime(distance));
         System.out.println(" The pilot(s) for this flight is/are: " + chosenAirplane.getPilotNames());
         System.out.println(" The fuel consumption for this flight is estimated to be " + chosenAirplane.calculateFuelConsumption(distance) + " kg.");
         System.out.println(" The total cost for this fligt is : " + chosenAirplane.getTotalCost(distance) + " DKK");
-
-        // End the game
-        end();
     }
 
     private int selectCargoAmount() {
@@ -134,7 +134,7 @@ public class Simulator {
 
 
 
-    public int selectFuelAmount() {
+    private int selectFuelAmount() {
         while (true) {
             try {
                 System.out.println("The chosen airplane has a consumption of " + chosenAirplane.getFuelConsumptionPerKilometer() + " kg per 100 km.");
@@ -168,6 +168,7 @@ public class Simulator {
     }
 
     private void printAirplaneList() {
+        System.out.println("The available airplanes are: ");
         for (int i = 0; i < airplanes.size(); i++) {
             System.out.println((i + 1) + ". " + capitalize(airplanes.get(i).getAirplaneType().toString()));
         }
@@ -211,7 +212,7 @@ public class Simulator {
         return str.substring(0, 1).toUpperCase() + str.substring(1).toLowerCase();
     }
 
-    public void setUp() {
+    private void setUp() {
         // Initialize airports and airplanes here
         // Add the appropriate objects to the 'airports' and 'airplanes' lists
         airports.add(new Airport("Aarhus", 56.2999988, 10.617997528));

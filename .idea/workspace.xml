@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6ec48fce-c727-4947-b6e0-c28be39ea330" name="Changes" comment="Add: the total cost for a flight">
+    <list default="true" id="6ec48fce-c727-4947-b6e0-c28be39ea330" name="Changes" comment="Refactor: clean up in Airplane">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Simulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Simulator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/airplanes/Airplane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/airplanes/Airplane.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Welcome.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/DistanceCalculatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/SimulatorTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,10 +65,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DistanceCalculatorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SimulatorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="console-application" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="DistanceCalculatorTest" />
+      <option name="MAIN_CLASS_NAME" value="SimulatorTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -96,7 +97,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Simulator" />
-        <item itemvalue="JUnit.DistanceCalculatorTest" />
+        <item itemvalue="JUnit.SimulatorTest" />
         <item itemvalue="JUnit.SimulatorTest.testInitialize" />
         <item itemvalue="JUnit.SimulatorTest.testInvalidAirportSelection" />
       </list>
@@ -120,7 +121,14 @@
       <option name="project" value="LOCAL" />
       <updated>1695366736542</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Refactor: clean up in Airplane">
+      <created>1695367813246</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1695367813246</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -129,6 +137,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Fix: Working on Github Actions" />
     <MESSAGE value="Add: the total cost for a flight" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add: the total cost for a flight" />
+    <MESSAGE value="Refactor: clean up in Airplane" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor: clean up in Airplane" />
   </component>
 </project>
