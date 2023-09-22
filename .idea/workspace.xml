@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6ec48fce-c727-4947-b6e0-c28be39ea330" name="Changes" comment="Fix: Working on Github Actions">
+    <list default="true" id="6ec48fce-c727-4947-b6e0-c28be39ea330" name="Changes" comment="Add: the total cost for a flight">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Simulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Simulator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/airplanes/Airplane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/airplanes/Airplane.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/DistanceCalculatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/DistanceCalculatorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/SimulatorTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +57,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.SimulatorTest">
+  <component name="RunManager" selected="Application.Simulator">
     <configuration name="Simulator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Simulator" />
       <module name="console-application" />
@@ -69,15 +69,6 @@
       <module name="console-application" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="DistanceCalculatorTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SimulatorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="console-application" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="SimulatorTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -105,11 +96,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.SimulatorTest" />
+        <item itemvalue="Application.Simulator" />
+        <item itemvalue="JUnit.DistanceCalculatorTest" />
         <item itemvalue="JUnit.SimulatorTest.testInitialize" />
         <item itemvalue="JUnit.SimulatorTest.testInvalidAirportSelection" />
-        <item itemvalue="JUnit.DistanceCalculatorTest" />
-        <item itemvalue="Application.Simulator" />
       </list>
     </recent_temporary>
   </component>
@@ -131,6 +121,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Fix: Working on Github Actions" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix: Working on Github Actions" />
+    <MESSAGE value="Add: the total cost for a flight" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add: the total cost for a flight" />
   </component>
 </project>

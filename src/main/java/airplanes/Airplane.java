@@ -14,8 +14,7 @@ public abstract class Airplane {
     }
 
     public int calculateFuelConsumptionInKg(int distance) {
-        int fuelConsumption = distance * fuelConsumptionPerKilometer;
-        return fuelConsumption;
+        return distance * fuelConsumptionPerKilometer;
     }
 
     public enum AirplaneType {
@@ -140,6 +139,19 @@ public abstract class Airplane {
 
     public void setFuelConsumptionPerKilometer(int fuelConsumptionPerKilometer) {
         this.fuelConsumptionPerKilometer = fuelConsumptionPerKilometer;
+    }
+
+    public int getTotalCost(int distance) {
+        int fuel = calculateFuelConsumptionInKg(distance) * 20; // 15 is the current price for a kg of fuel
+        int totalHourlySalary = 0;
+        for (Pilot p : pilots) {
+            totalHourlySalary =+ p.getHourly_salary();
+        }
+        double flightTime = distance / (double) maximumSpeed * 60;
+        int hours = (int) flightTime / 60;
+        totalHourlySalary *= hours;
+        int totalCost = fuel + totalHourlySalary;
+        return totalCost;
     }
 }
 
