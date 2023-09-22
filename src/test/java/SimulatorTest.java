@@ -54,18 +54,11 @@ public class SimulatorTest {
     }
 
     @Test
-    public void test1() {
-        assertEquals(1, 1);
-        /**
-        // Simulate user input of "1"
-        System.setIn(new ByteArrayInputStream("1".getBytes()));
+    public void testAirport() {
+        Airport aarhus = new Airport("Aarhus", 56.2999988, 10.617997528);
+        assertEquals("Aarhus", aarhus.getName());
+        assertEquals(56.2999988, aarhus.getLatitude(), 0.0001);
 
-        Simulator simulator = new Simulator();
-        simulator.main(new String[0]);
-
-        String expectedOutput = "Press 1: You pressed 1";
-        assertEquals(expectedOutput, outContent.toString().trim());
-        */
      }
 
     @Test
